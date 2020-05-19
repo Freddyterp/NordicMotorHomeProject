@@ -8,6 +8,18 @@ public class Customer {
     private String Email;
     private String driverLicenseNumber;
 
+    public Customer(int id, String firstName, String lastName, int phoneNumber, String email, String driverLicenseNumber) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        PhoneNumber = phoneNumber;
+        Email = email;
+        this.driverLicenseNumber = driverLicenseNumber;
+    }
+
+    public Customer() {
+    }
+
     public int getId() {
         return id;
     }

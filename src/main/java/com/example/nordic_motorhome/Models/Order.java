@@ -9,6 +9,17 @@ public class Order {
         private Date endDate;
         private Date reservationDate;
 
+    public Order(int id, int price, Date startDate, Date endDate, Date reservationDate) {
+        this.id = id;
+        this.price = price;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.reservationDate = reservationDate;
+    }
+
+    public Order() {
+    }
+
     public int getId() {
         return id;
     }

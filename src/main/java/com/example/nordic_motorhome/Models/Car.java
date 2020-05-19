@@ -8,6 +8,18 @@ public class Car {
     private int yearOfPurchase;
     private int sleepingSpots;
 
+    public Car(int id, String model, String brand, int yearOfManufacture, int yearOfPurchase, int sleepingSpots) {
+        this.id = id;
+        Model = model;
+        Brand = brand;
+        this.yearOfManufacture = yearOfManufacture;
+        this.yearOfPurchase = yearOfPurchase;
+        this.sleepingSpots = sleepingSpots;
+    }
+
+    public Car() {
+    }
+
     public int getId() {
         return id;
     }
