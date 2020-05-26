@@ -4,17 +4,21 @@ import java.util.Date;
 
 public class Order {
         private int id;
-        private int price;
+        private float price;
         private Date startDate;
         private Date endDate;
         private Date reservationDate;
+        private Car reservedCar;
+        private Customer customer;
 
-    public Order(int id, int price, Date startDate, Date endDate, Date reservationDate) {
+    public Order(int id, float price, Date startDate, Date endDate, Date reservationDate, Car car, Customer customer) {
         this.id = id;
         this.price = price;
         this.startDate = startDate;
         this.endDate = endDate;
         this.reservationDate = reservationDate;
+        this.reservedCar = car;
+        this.customer = customer;
     }
 
     public Order() {
@@ -28,13 +32,11 @@ public class Order {
         this.id = id;
     }
 
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
+    public void setPrice(float price) {
 
     public Date getStartDate() {
         return startDate;
@@ -52,11 +54,30 @@ public class Order {
         this.endDate = endDate;
     }
 
-    public Date getReservationDate() {
-        return reservationDate;
+    public Date getReservationDate(){return this.reservationDate;}
+
+    public java.sql.Date getDateAsSQL(java.util.Date Date) {
+        java.sql.Date sqlDate= new java.sql.Date(Date.getTime());
+        return sqlDate;
     }
 
     public void setReservationDate(Date reservationDate){
         this.reservationDate = reservationDate;
+    }
+
+    public Car getReservedCar() {
+        return reservedCar;
+    }
+
+    public void setReservedCar(Car reservedCar) {
+        this.reservedCar = reservedCar;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }
