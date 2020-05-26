@@ -18,9 +18,9 @@ public class CarService {
         return carRepo.fetchAllItems();
     }
 
-    public void addMotorhome(Car c){
+    public void addCar(Car c){
 
-        carRepo.addMotorhome(c);
+        carRepo.addCar(c);
     }
     public void deleteCar(int id){
         carRepo.deleteMotorhome(id);

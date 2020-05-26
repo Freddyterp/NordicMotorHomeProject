@@ -16,23 +16,23 @@ public class CarRepo {
     JdbcTemplate template;
 
     public List<Car> fetchAllItems(){
-        String sql = "SELECT * FROM motorhomes";
+        String sql = "SELECT * FROM Cars";
         RowMapper<Car> rowMapper = new BeanPropertyRowMapper<>(Car.class);
         return template.query(sql,rowMapper);
     }
 
-    public void addMotorhome(Car c){
-        String sql = "INSERT INTO motorhomes (idMotorhomes, model, brand, Year_of_manufacture, year_of_purchase, sleeping_spots) VALUES (?, ?, ?, ?, ?, ?)";
-        template.update(sql, c.getIdCar(), c.getModel(), c.getBrand(), c.getYearOfManufacture(), c.getYearOfPurchase(), c.getSleepingSpot() );
+    public void addCar(Car c){
+        String sql = "INSERT INTO Cars (idCars, model, brand, yearOfManufacture, yearOfPurchase, sleepingSpots) VALUES (?, ?, ?, ?, ?, ?)";
+        template.update(sql, c.getIdCars(), c.getModel(), c.getBrand(), c.getYearOfManufacture(), c.getYearOfPurchase(), c.getSleepingSpots() );
     }
     public void deleteMotorhome(int id){
         //tilføj parameter som kan teste om det lykkedes at slette
-        String sql = "DELETE FROM motorhomes WHERE idMotorhome=?";
+        String sql = "DELETE FROM Cars WHERE idCars=?";
         template.update(sql,id);
     }
 
     public Car findMotorhomeById(int id){
-        String sql = "SELECT * FROM motorhomes WHERE idMotorhome=?";
+        String sql = "SELECT * FROM Cars WHERE idCars=?";
         RowMapper<Car> rowMapper = new BeanPropertyRowMapper<>(Car.class);
         return template.queryForObject(sql, rowMapper, id);
     }

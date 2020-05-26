@@ -15,7 +15,8 @@ public class MainController {
     CarService carService;
 
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("cars", carService.fetchAllItems());
         return "index";
     }
 
@@ -26,7 +27,7 @@ public class MainController {
 
     @PostMapping("/create")
     public String create(@ModelAttribute Car car){
-        carService.addMotorhome(car);
+        carService.addCar(car);
         return "redirect:/";
     }
 
