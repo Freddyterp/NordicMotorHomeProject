@@ -23,7 +23,15 @@ public class CarService {
         carRepo.addCar(c);
     }
     public void deleteCar(int id){
-        carRepo.deleteMotorhome(id);
+        carRepo.deleteCar(id);
+    }
+
+    public void updateCar(Car c){
+        carRepo.updateCar(c);
+    }
+
+    public Car findById(int id){
+        return carRepo.findCarById(id);
     }
 
 
