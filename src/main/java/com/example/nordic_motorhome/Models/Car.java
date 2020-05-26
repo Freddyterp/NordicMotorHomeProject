@@ -1,47 +1,50 @@
 package com.example.nordic_motorhome.Models;
 
+
 public class Car {
-    private int id;
-    private String Model;
-    private String Brand;
+
+
+    private int idCar;
+    private String model;
+    private String brand;
     private int yearOfManufacture;
     private int yearOfPurchase;
-    private int sleepingSpots;
-
-    public Car(int id, String model, String brand, int yearOfManufacture, int yearOfPurchase, int sleepingSpots) {
-        this.id = id;
-        Model = model;
-        Brand = brand;
-        this.yearOfManufacture = yearOfManufacture;
-        this.yearOfPurchase = yearOfPurchase;
-        this.sleepingSpots = sleepingSpots;
-    }
+    private int sleepingSpot;
 
     public Car() {
     }
 
-    public int getId() {
-        return id;
+    public Car(int idCar, String model, String brand, int yearOfManufacture, int yearOfPurchase, int sleepingSpot) {
+        this.idCar = idCar;
+        this.model = model;
+        this.brand = brand;
+        this.yearOfManufacture = yearOfManufacture;
+        this.yearOfPurchase = yearOfPurchase;
+        this.sleepingSpot = sleepingSpot;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getIdCar() {
+        return idCar;
+    }
+
+    public void setIdCar(int idCar) {
+        this.idCar = idCar;
     }
 
     public String getModel() {
-        return Model;
+        return model;
     }
 
     public void setModel(String model) {
-        Model = model;
+        this.model = model;
     }
 
     public String getBrand() {
-        return Brand;
+        return brand;
     }
 
     public void setBrand(String brand) {
-        Brand = brand;
+        this.brand = brand;
     }
 
     public int getYearOfManufacture() {
@@ -60,11 +63,12 @@ public class Car {
         this.yearOfPurchase = yearOfPurchase;
     }
 
-    public int getSleepingSpots() {
-        return sleepingSpots;
+    public int getSleepingSpot() {
+        return sleepingSpot;
     }
 
-    public void setSleepingSpots(int sleepingSpots) {
-        this.sleepingSpots = sleepingSpots;
+    public void setSleepingSpot(int sleepinSspot) {
+        this.sleepingSpot = sleepinSspot;
     }
 }
+

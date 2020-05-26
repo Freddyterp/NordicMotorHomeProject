@@ -25,18 +25,23 @@
         <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Enrollment Date</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Model</th>
+            <th scope="col">Sleeping Spots</th>
+            <th scope="col">Year of Manufacture</th>
+            <th scope="col">Year of Purchase</th>
             <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="item : ${items}">
-            <th th:text="${item.id}"></th>
-            <th th:text="${item.name}" />
-            <th th:text="${item.price}" />
-            <th></th>
+        <tr th:each="motorhome : ${motorhomes}">
+            <th th:text="$motorhome.id}"></th>
+            <th th:text="${motorhome.brand}" ></th>
+            <th th:text="${motorhome.model}" ></th>
+        <!--    <th th:text="${motorhome.Sleeping_spots}" ></th>
+            <th th:text="${motorhome.Year_of_manufacture}" ></th>
+            <th th:text="${motorhome.year_of_purchase}" ></th>
+-->
             <th>
                 <a th:href="@{'/details/' + ${item.id}}">
                     <button  type="button" class="btn btn-success">Details</button>
