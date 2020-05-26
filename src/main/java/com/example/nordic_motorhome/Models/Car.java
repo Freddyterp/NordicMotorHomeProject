@@ -1,47 +1,53 @@
 package com.example.nordic_motorhome.Models;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+
+@Entity
 public class Car {
-    private int id;
-    private String Model;
-    private String Brand;
+
+    @Id
+    private int idCars;
+    private String model;
+    private String brand;
     private int yearOfManufacture;
     private int yearOfPurchase;
     private int sleepingSpots;
 
-    public Car(int id, String model, String brand, int yearOfManufacture, int yearOfPurchase, int sleepingSpots) {
-        this.id = id;
-        Model = model;
-        Brand = brand;
+    public Car() {
+    }
+
+    public Car(int idCars, String model, String brand, int yearOfManufacture, int yearOfPurchase, int sleepingSpots) {
+        this.idCars = idCars;
+        this.model = model;
+        this.brand = brand;
         this.yearOfManufacture = yearOfManufacture;
         this.yearOfPurchase = yearOfPurchase;
         this.sleepingSpots = sleepingSpots;
     }
 
-    public Car() {
+    public int getIdCars() {
+        return idCars;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setIdCars(int idCar) {
+        this.idCars = idCar;
     }
 
     public String getModel() {
-        return Model;
+        return model;
     }
 
     public void setModel(String model) {
-        Model = model;
+        this.model = model;
     }
 
     public String getBrand() {
-        return Brand;
+        return brand;
     }
 
     public void setBrand(String brand) {
-        Brand = brand;
+        this.brand = brand;
     }
 
     public int getYearOfManufacture() {
@@ -68,3 +74,4 @@ public class Car {
         this.sleepingSpots = sleepingSpots;
     }
 }
+
