@@ -41,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();
     }
 
-    // Tillader Spring security at læse css filer til login screen
+    // Allow Spring Security to give access to css files on login page (Before login)
     @Override
     public void configure(WebSecurity web) {
         web
