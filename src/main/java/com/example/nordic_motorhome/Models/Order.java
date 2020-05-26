@@ -37,8 +37,10 @@ public class Order {
     }
 
     public void setPrice(float price) {
+        this.price = price;
+    }
 
-    public Date getStartDate() {
+    public Date getStartDate(){
         return startDate;
     }
 
@@ -73,7 +75,7 @@ public class Order {
         this.reservedCar = reservedCar;
     }
 
-    public Customer getCustomer() {
+    public Customer getCustomer(){
         return customer;
     }
 
