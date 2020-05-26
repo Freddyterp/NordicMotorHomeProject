@@ -37,8 +37,6 @@ public class Order {
     }
 
     public void setPrice(float price) {
-        this.price = price;
-    }
 
     public Date getStartDate() {
         return startDate;
