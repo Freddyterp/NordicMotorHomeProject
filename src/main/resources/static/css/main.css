@@ -1,4 +1,9 @@
 h1 {
-    color: black;
+    color: darkgreen;
     font-weight: bold;
+}
+
+#navbar-right {
+    float: right;
+
 }
