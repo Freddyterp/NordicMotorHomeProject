@@ -11,16 +11,16 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 USE `mydb` ;
 -- -----------------------------------------------------
--- Table `mydb`.`Motorhomes`
+-- Table `mydb`.`Cars`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Motorhomes` (
-  `idMotorhomes` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `mydb`.`Cars` (
+  `idCars` INT NOT NULL AUTO_INCREMENT,
   `model` VARCHAR(45) NULL,
-  `Brand` VARCHAR(45) NULL,
-  `Year_of_manufacture` VARCHAR(45) NULL,
-  `year_of_purchase` VARCHAR(45) NULL,
-  `sleeping_spots` VARCHAR(45) NULL,
-  PRIMARY KEY (`idMotorhomes`))
+  `brand` VARCHAR(45) NULL,
+  `yearOfManufacture` VARCHAR(45) NULL,
+  `yearOfPurchase` VARCHAR(45) NULL,
+  `sleepingSpots` VARCHAR(45) NULL,
+  PRIMARY KEY (`idCars`))
 ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`Customers`
@@ -42,14 +42,14 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Orders` (
   `reservationDate` DATE NULL,
   `startDate` DATE NULL,
   `endDate` DATE NULL,
-  `Motorhomes_idMotorhomes` INT NOT NULL,
+  `Cars_idCars` INT NOT NULL,
   `Customers_idCustomers` INT NOT NULL,
   PRIMARY KEY (`idOrders`),
-  INDEX `fk_Orders_Motorhomes_idx` (`Motorhomes_idMotorhomes` ASC) VISIBLE,
+  INDEX `fk_Orders_Cars_idx` (`Cars_idCars` ASC) VISIBLE,
   INDEX `fk_Orders_Customers1_idx` (`Customers_idCustomers` ASC) VISIBLE,
-  CONSTRAINT `fk_Orders_Motorhomes`
-    FOREIGN KEY (`Motorhomes_idMotorhomes`)
-    REFERENCES `mydb`.`Motorhomes` (`idMotorhomes`)
+  CONSTRAINT `fk_Orders_Cars`
+    FOREIGN KEY (`Cars_idCars`)
+    REFERENCES `mydb`.`Cars` (`idCars`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Orders_Customers1`

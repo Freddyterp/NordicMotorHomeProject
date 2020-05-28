@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="/">Nordic Motorhome Rental</a>
+        <a class="navbar-brand" href="/">Nordic MotorHome Rental</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -12,6 +12,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/create">Courses</a>
                 </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <form th:action="@{/logout}" method="post">
+                        <button type="submit" class="btn btn-danger my-2 my-sm-0">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> -->
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Nordic Motorhome Rental</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="collapse navbar-collapse" id="navbarsExample07">
             <ul class="navbar-nav mr-auto">
@@ -25,6 +44,11 @@
                     <a class="nav-link" href="/rental">Rental System</a>
                 </li>
             </ul>
+            <form th:action="@{/logout}" method="post">
+                <button type="submit" class="btn btn-danger my-2 my-sm-0">Logout</button>
+            </form>
         </div>
     </div>
 </nav>
+
+
