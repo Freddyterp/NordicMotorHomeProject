@@ -49,16 +49,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         web
                 .ignoring()
                 .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**","/vendor/**","/fonts/**");
-                .logout()
-                .permitAll();
-    }
-
-    // Allow Spring Security to give access to css files on login page (Before login)
-    @Override
-    public void configure(WebSecurity web) {
-        web
-                .ignoring()
-                .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**","/vendor/**","/fonts/**");
     }
 
 

@@ -1,70 +1,80 @@
 package com.example.nordic_motorhome.Models;
 
 public class Customer {
-    private int id;
-    private String firstName;
-    private String lastName;
-    private int PhoneNumber;
-    private String Email;
-    private String driverLicenseNumber;
+    private int idCustomers;
+    private String fName;
+    private String lName;
+    private String Adress;
+    private int phone_number;
+    private String email;
+    private String driverLicense;
 
-    public Customer(int id, String firstName, String lastName, int phoneNumber, String email, String driverLicenseNumber) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        PhoneNumber = phoneNumber;
-        Email = email;
-        this.driverLicenseNumber = driverLicenseNumber;
+    public Customer(int idCustomers, String fName, String lName, String adress, int phone_number, String email, String driverLicense) {
+        this.idCustomers = idCustomers;
+        this.fName = fName;
+        this.lName = lName;
+        Adress = adress;
+        this.phone_number = phone_number;
+        this.email = email;
+        this.driverLicense = driverLicense;
     }
 
     public Customer() {
     }
 
-    public int getId() {
-        return id;
+    public int getIdCustomers() {
+        return idCustomers;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdCustomers(int idCustomers) {
+        this.idCustomers = idCustomers;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getfName() {
+        return fName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getlName() {
+        return lName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setlName(String lName) {
+        this.lName = lName;
     }
 
-    public int getPhoneNumber() {
-        return PhoneNumber;
+    public String getAdress() {
+        return Adress;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
-        PhoneNumber = phoneNumber;
+    public void setAdress(String adress) {
+        Adress = adress;
+    }
+
+    public int getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(int phone_number) {
+        this.phone_number = phone_number;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
-    public String getDriverLicenseNumber() {
-        return driverLicenseNumber;
+    public String getDriverLicense() {
+        return driverLicense;
     }
 
-    public void setDriverLicenseNumber(String driverLicenseNumber) {
-        this.driverLicenseNumber = driverLicenseNumber;
+    public void setDriverLicense(String driverLicense) {
+        this.driverLicense = driverLicense;
     }
 }
