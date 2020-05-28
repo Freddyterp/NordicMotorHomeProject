@@ -4,19 +4,19 @@ public class Customer {
     private int idCustomers;
     private String fName;
     private String lName;
-    private String Adress;
+    private String Address;
     private int phone_number;
     private String email;
-    private String driverLicense;
+    private String driverlicense;
 
-    public Customer(int idCustomers, String fName, String lName, String adress, int phone_number, String email, String driverLicense) {
+    public Customer(int idCustomers, String fName, String lName, String Address, int phone_number, String email, String driverlicense) {
         this.idCustomers = idCustomers;
         this.fName = fName;
         this.lName = lName;
-        Adress = adress;
+        this.Address = Address;
         this.phone_number = phone_number;
         this.email = email;
-        this.driverLicense = driverLicense;
+        this.driverlicense = driverlicense;
     }
 
     public Customer() {
@@ -46,12 +46,12 @@ public class Customer {
         this.lName = lName;
     }
 
-    public String getAdress() {
-        return Adress;
+    public String getAddress() {
+        return Address;
     }
 
-    public void setAdress(String adress) {
-        Adress = adress;
+    public void setAddress(String adress) {
+        Address = adress;
     }
 
     public int getPhone_number() {
@@ -70,11 +70,11 @@ public class Customer {
         this.email = email;
     }
 
-    public String getDriverLicense() {
-        return driverLicense;
+    public String getDriverlicense() {
+        return driverlicense;
     }
 
-    public void setDriverLicense(String driverLicense) {
-        this.driverLicense = driverLicense;
+    public void setDriverlicense(String driverlicense) {
+        this.driverlicense = driverlicense;
     }
 }

@@ -8,8 +8,8 @@
 <div th:replace="fragments/top_menu"> </div>
 <div class="container" >customer
     <h1> Update </h1>
-    <form action="/update" method="post">
-        <input type="hidden" name="idCustomers" th:value="${customer.idCustomer}">
+    <form action="/updateCustomer" method="post">
+            <input type="hidden" name="idCustomers" th:value="${customer.idCustomers}">
         <div class="form-group">
             <p>First Name:</p>
             <input type="text" name="fName" th:value="${customer.fName}" class="form-control">
@@ -20,7 +20,7 @@
         </div>
         <div class="form-group">
             <p>Adresse:</p>
-            <input type="text" name="Adresse" th:value="${customer.Adresse}" class="form-control">
+            <input type="text" name="Address" th:value="${customer.Address}" class="form-control">
         </div>
         <div class="form-group">
             <p>Phone number</p>
@@ -32,7 +32,7 @@
         </div>
         <div class="form-group">
             <p>Driver License</p>
-            <input type="text" name="driverLicense" th:value="${customer.driverLicense}" class="form-control">
+            <input type="text" name="driverlicense" th:value="${customer.driverlicense}" class="form-control">
         </div>
         <button type="submit" class="btn btn-success">Update</button>
     </form>

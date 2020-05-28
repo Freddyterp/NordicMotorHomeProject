@@ -34,7 +34,7 @@ public class CustomerService
     }
 
     public Customer findById(int id){
-        return customerRepo.findCustomerById(id);
+        return customerRepo.findById(id);
     }
 
 

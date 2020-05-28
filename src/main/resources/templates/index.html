@@ -13,8 +13,8 @@
 </div>
 
 <div class="container">
-    <h1>Students</h1>
-    <p>Enrolled Students at KEA</p>
+    <h1>Motorhomes</h1>
+
     <!-- Tilføj Student knap -->
     <a th:href="@{/create/}"
        class="btn btn-success">
@@ -52,7 +52,7 @@
                     <button  type="button" class="btn btn-primary">Edit</button>
                 </a>
                     <a th:href="@{'/delete/' + ${car.idCars}}">
-                    <button type="button" class="btn btn-danger" onclick="if (!(confirm('Are you sure you want to delete this Student?'))) return false">Delete</button>
+                    <button type="button" class="btn btn-danger" onclick="if (!(confirm('Are you sure you want to delete this motorhome?'))) return false">Delete</button>
 
                 </a>
             </th>

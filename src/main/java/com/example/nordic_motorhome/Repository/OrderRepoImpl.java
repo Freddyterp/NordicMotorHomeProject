@@ -36,8 +36,8 @@ public class OrderRepoImpl implements IOrderRepo {
         try{
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM orders");
             ResultSet rs =ps.executeQuery();
-            Order tempOrder = OrderRepoImpl.getData(rs);
-            orders.add(tempOrder);
+         //   Order tempOrder = OrderRepoImpl.getData(rs);
+         //   orders.add(tempOrder);
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -51,13 +51,14 @@ public class OrderRepoImpl implements IOrderRepo {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM order WHERE id=?");
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            tempOrder = OrderRepoImpl.getData(rs);
+         //   tempOrder = OrderRepoImpl.getData(rs);
         } catch (SQLException e){
             e.printStackTrace();
         }
 
         return tempOrder;
     }
+
 
     public void update(Order updatedOrder){
         try{
@@ -67,13 +68,14 @@ public class OrderRepoImpl implements IOrderRepo {
             ps.setDate(2, updatedOrder.getDateAsSQL(updatedOrder.getReservationDate()));
             ps.setDate(3,updatedOrder.getDateAsSQL(updatedOrder.getStartDate()));
             ps.setDate(4,updatedOrder.getDateAsSQL(updatedOrder.getEndDate()));
-            ps.setInt(5, updatedOrder.getReservedCar());
-            ps.setInt(6, updatedOrder.getCustomer());
+         //   ps.setInt(5, updatedOrder.getReservedCar());
+           // ps.setInt(6, updatedOrder.getCustomer());
         }catch (SQLException e){
             e.printStackTrace();
         }
 
     }
+
 
     public void delete(int id){
         try
@@ -87,6 +89,7 @@ public class OrderRepoImpl implements IOrderRepo {
 
     }
 
+
     private static Order getData(ResultSet rs)
     {
         Order tempOrder = new Order();
@@ -97,11 +100,14 @@ public class OrderRepoImpl implements IOrderRepo {
                 tempOrder.setReservationDate(rs.getDate(3));
                 tempOrder.setStartDate(rs.getDate(4));
                 tempOrder.setEndDate(rs.getDate(5));
-                tempOrder.setReservedCar();
-                tempOrder.setCustomer();
+             //   tempOrder.setReservedCar();
+               // tempOrder.setCustomer();
             }
         } catch (SQLException e){
             e.printStackTrace();
         }
+        return tempOrder;
     }
+
+
 }
