@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../MainC.css">
+</head>
+<body>
+
+<h1>Alle kunders info</h1>
+<p th:each="Costumer :$(Costumer)">
+    <span th:text="$Costumer.id)"/>
+    <span th:text="$Costumer.fName)"/>
+    <span th:text="$Costumer.lName)"/>
+    <span th:text="$Costumer.PhoneNumber)"/>
+    <span th:text="$Costumer.Email)"/>
+    <span th:text="$Costumer.driverLicenseNumber)"/>
+
+</p>
+
+</body>
+</html>

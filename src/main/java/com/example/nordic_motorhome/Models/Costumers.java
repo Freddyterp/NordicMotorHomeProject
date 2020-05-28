@@ -1,6 +1,11 @@
 package com.example.nordic_motorhome.Models;
 
-public class Customer {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Costumers {
+    @Id
     private int id;
     private String firstName;
     private String lastName;
@@ -8,7 +13,7 @@ public class Customer {
     private String Email;
     private String driverLicenseNumber;
 
-    public Customer(int id, String firstName, String lastName, int phoneNumber, String email, String driverLicenseNumber) {
+    public Costumers(int id, String firstName, String lastName, int phoneNumber, String email, String driverLicenseNumber) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -17,7 +22,7 @@ public class Customer {
         this.driverLicenseNumber = driverLicenseNumber;
     }
 
-    public Customer() {
+    public Costumers() {
     }
 
     public int getId() {
