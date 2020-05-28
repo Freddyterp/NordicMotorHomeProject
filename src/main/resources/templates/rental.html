@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header_scripts"> </div>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+
+<div th:replace="fragments/top_menu">
+</div>
+
+<div class="container">
+    <h1>Rentals</h1>
+    <p>All Rentals</p>
+    <!-- tilføj ny bestilling knap--->
+    <a th:href="@{/create_rental/}"
+       class="btn btn-success">
+        Create New Rental
+    </a>
+
+    <br>
+    <br>
+
+    <table class = "table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Price</th>
+            <th scope="col">Date Of Reservation</th>
+            <th scope="col">Date Of Start</th>
+            <th scope="col">Date of End</th>
+            <th scope="col">Car ID</th>
+            <th scope="col">Customer ID</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order :${orders}">
+            <th th:text="${order.idOrder}"></th>
+            <th th:text="${order.Price}" ></th>
+            <th th:text="${order.ReservationDate}" ></th>
+            <th th:text="${order.StartDate}" ></th>
+            <th th:text="${order.EndDate}" ></th>
+            <th th:text="${order.Cars_idCars}" ></th>
+            <th th:text="${order.Customer_idCustomer}"></th>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div th:replace="fragments/bottom_scripts">
+
+</div>
+</body>
+</html>

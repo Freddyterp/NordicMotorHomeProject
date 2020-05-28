@@ -12,4 +12,28 @@ public class MainController {
         return "index";
     }
 
+    @GetMapping("/create")
+    public String create(){
+        return "create";
+    }
+
+    @PostMapping("/create")
+    public String create(@ModelAttribute Car car){
+        carService.addCar(car);
+        return "redirect:/";
+    }
+
+    @GetMapping("/rental")
+    public String rental()
+    {
+        return "rental";
+    }
+
+    @GetMapping("/create_rental")
+    public String createRental()
+    {
+        return "create_rental";
+    }
+
+
 }
