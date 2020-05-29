@@ -27,9 +27,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         ;
     }
 
+    //Kan være farligt at disable CSRF?????
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http.csrf().disable()
+                .authorizeRequests()
                 .antMatchers("/resources/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -37,8 +39,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .permitAll()
                 .and()
-                .logout()
-                .permitAll();
+                .logout().permitAll();
+
     }
 
     // Allow Spring Security to give access to css files on login page (Before login)

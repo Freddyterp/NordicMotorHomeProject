@@ -25,20 +25,21 @@ public class CarRepo {
         String sql = "INSERT INTO Cars (idCars, model, brand, yearOfManufacture, yearOfPurchase, sleepingSpots) VALUES (?, ?, ?, ?, ?, ?)";
         template.update(sql, c.getIdCars(), c.getModel(), c.getBrand(), c.getYearOfManufacture(), c.getYearOfPurchase(), c.getSleepingSpots() );
     }
-    public void deleteMotorhome(int id){
+    public void deleteCar(int id){
         //tilføj parameter som kan teste om det lykkedes at slette
         String sql = "DELETE FROM Cars WHERE idCars=?";
         template.update(sql,id);
     }
 
-    public Car findMotorhomeById(int id){
+    public Car findCarById(int id){
         String sql = "SELECT * FROM Cars WHERE idCars=?";
         RowMapper<Car> rowMapper = new BeanPropertyRowMapper<>(Car.class);
         return template.queryForObject(sql, rowMapper, id);
     }
-/*
-    public void updateMotorhome(Car c){
-        String sql = "UPDATE motorhome SET b";
+
+    public void updateCar(Car c){
+        String sql = "UPDATE Cars SET model=?, brand=?, yearOfManufacture=?, yearOfPurchase=?, sleepingSpots=? WHERE idCars=?";
+        template.update(sql, c.getModel(), c.getBrand(), c.getYearOfManufacture(), c.getYearOfPurchase(), c.getSleepingSpots(), c.getIdCars());
     }
-*/
+
 }
