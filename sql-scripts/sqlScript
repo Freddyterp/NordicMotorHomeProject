@@ -14,24 +14,26 @@ USE `mydb` ;
 -- Table `mydb`.`Cars`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Cars` (
-  `idCars` INT NOT NULL AUTO_INCREMENT,
+  `idCars` INT NOT NULL,
   `model` VARCHAR(45) NULL,
   `brand` VARCHAR(45) NULL,
   `yearOfManufacture` VARCHAR(45) NULL,
   `yearOfPurchase` VARCHAR(45) NULL,
   `sleepingSpots` VARCHAR(45) NULL,
-  PRIMARY KEY (`idCars`))
+  PRIMARY key  (`idCars`)
+  )
 ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`Customers`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Customers` (
-  `idCustomers` INT NOT NULL AUTO_INCREMENT,
+  `idCustomers` INT NOT NULL,
   `fName` VARCHAR(45) NULL,
   `lName` VARCHAR(45) NULL,
   `Address` VARCHAR(45) NULL,
   `phone_number` VARCHAR(45) NULL,
-  PRIMARY KEY (`idCustomers`))
+  PRIMARY KEY (`idCustomers`)
+  )
 ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`Orders`
@@ -74,6 +76,7 @@ CREATE TABLE `users` (
   `enabled` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 );
+
 
 INSERT INTO `users` (`username`,`password`,`role`,`enabled`)
 VALUES ('admin',

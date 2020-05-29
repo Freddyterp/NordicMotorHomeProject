@@ -37,9 +37,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .permitAll()
                 .and()
+<<<<<<< Updated upstream
                 .logout()
                 .permitAll();
     }
+=======
+                .logout().permitAll();
+
+    }
+
+>>>>>>> Stashed changes
 
     // Allow Spring Security to give access to css files on login page (Before login)
     @Override

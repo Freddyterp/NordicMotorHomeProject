@@ -12,21 +12,33 @@
 
 <div class="container">
     <h1>Rentals</h1>
+<<<<<<< Updated upstream
     <p>All Rentals</p>
     <!-- tilføj ny bestilling knap--->
     <a th:href="@{/create_rental/}"
        class="btn btn-success">
         Create New Rental
+=======
+    <!-- tilføj ny bestilling knap--->
+    <a th:href="@{/create_rental/}"
+    class = "btn btn-success">
+        Create new order
+>>>>>>> Stashed changes
     </a>
 
     <br>
     <br>
 
+<<<<<<< Updated upstream
     <table class = "table table-striped">
+=======
+    <table class="table table-striped">
+>>>>>>> Stashed changes
         <thead>
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Price</th>
+<<<<<<< Updated upstream
             <th scope="col">Date Of Reservation</th>
             <th scope="col">Date Of Start</th>
             <th scope="col">Date of End</th>
@@ -50,6 +62,45 @@
 </div>
 
 
+=======
+            <th scope="col">Date of reservation</th>
+            <th scope="col">Start date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Car ID</th>
+            <th scope="col">Customer ID</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <th th:text="${order.id}"></th>
+            <th th:text="${order.price}" ></th>
+            <th th:text="${order.reservationDate}" ></th>
+            <th th:text="${order.startDate}" ></th>
+            <th th:text="${order.endDate}" ></th>
+            <th th:text="${order.reservedCar}" ></th>
+            <th th:text="${order.customer}"></th>
+
+            <th>
+
+                <a th:href="@{'/update_rental/' + ${order.id}}">
+                    <button  type="button" class="btn btn-primary">Edit</button>
+                </a>
+                <a th:href="@{'/delete_rental/' + ${order.id}}">
+                    <button type="button" class="btn btn-danger" onclick="if (!(confirm('Are you sure you want to delete this Rental?'))) return false">Delete</button>
+
+                </a>
+            </th>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+
+
+>>>>>>> Stashed changes
 <div th:replace="fragments/bottom_scripts">
 
 </div>
