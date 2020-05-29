@@ -40,7 +40,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Orders` (
   `idOrders` INT NOT NULL AUTO_INCREMENT,
-  `date` DATE NULL,
+  `price` FlOAT NULL,
+  `reservationDate` DATE NULL,
+  `startDate` DATE NULL,
+  `endDate` DATE NULL,
   `Cars_idCars` INT NOT NULL,
   `Customers_idCustomers` INT NOT NULL,
   PRIMARY KEY (`idOrders`),

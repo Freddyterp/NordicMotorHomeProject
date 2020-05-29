@@ -1,28 +1,43 @@
 package com.example.nordic_motorhome.Models;
 
-import java.util.Date;
+import com.example.nordic_motorhome.Repository.CarRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
+@Entity
 public class Order {
-        private int id;
-        private float price;
-        private Date startDate;
-        private Date endDate;
-        private Date reservationDate;
-        private Car reservedCar;
-        private Customer customer;
 
-    public Order(int id, float price, Date startDate, Date endDate, Date reservationDate, Car car, Customer customer) {
+
+    @Id
+    private int id;
+    private float price;
+    private Date startDate;
+    private Date endDate;
+    private Date reservationDate;
+    private int reservedCar;
+    private int customer;
+
+
+
+    public Order(){
+
+    }
+
+    public Order(int id, float price, Date startDate, Date endDate, Date reservationDate, int carID, int customerID) {
         this.id = id;
         this.price = price;
         this.startDate = startDate;
         this.endDate = endDate;
         this.reservationDate = reservationDate;
-        this.reservedCar = car;
-        this.customer = customer;
+        this.reservedCar = carID;
+        this.customer = customerID;
     }
 
-    public Order() {
-    }
 
     public int getId() {
         return id;
@@ -56,30 +71,35 @@ public class Order {
         this.endDate = endDate;
     }
 
-    public Date getReservationDate(){return this.reservationDate;}
-
-    public java.sql.Date getDateAsSQL(java.util.Date Date) {
-        java.sql.Date sqlDate= new java.sql.Date(Date.getTime());
-        return sqlDate;
+    public Date getReservationDate() {
+        return this.reservationDate;
     }
+
+    public String getReservationDateAsString()
+    {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        return formatter.format(reservationDate);
+    }
+
 
     public void setReservationDate(Date reservationDate){
         this.reservationDate = reservationDate;
     }
 
-    public Car getReservedCar() {
+    public int getReservedCar()
+    {
         return reservedCar;
     }
 
-    public void setReservedCar(Car reservedCar) {
+    public void setReservedCar(int reservedCar) {
         this.reservedCar = reservedCar;
     }
 
-    public Customer getCustomer(){
+    public int getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(int customer) {
         this.customer = customer;
     }
 }
